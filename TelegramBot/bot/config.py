@@ -1,7 +1,11 @@
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from dotenv import load_dotenv
+import os
 
-BOT_TOKEN = "7550581791:AAGZPIcotSYM1_3kPJQe-h1I2kQClUzf5SE"
+load_dotenv()
+
+BOT_TOKEN = os.getenv("SECRET_KEY")
 
 bot = Bot(token=BOT_TOKEN)
 storage = MemoryStorage()

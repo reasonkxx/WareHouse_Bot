@@ -2,8 +2,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from db.db_models import Item
+from dotenv import load_dotenv
+import os
 
-DATABASE_URL = "mssql+pyodbc://admin:123456789@MYCOMPUTER\MSSQLSERVER1/WareHouse?driver=SQL+Server" 
+load_dotenv()
+
+
+DATABASE_URL =  os.getenv("DATABASE_URL")
 
 
 engine = create_engine(DATABASE_URL)
